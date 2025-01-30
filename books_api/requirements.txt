@@ -1,1 +1,4 @@
+alembic
+asyncpg
 fastapi[all]
+sqlalchemy[asyncio]
