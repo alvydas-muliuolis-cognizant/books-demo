@@ -1,3 +1,4 @@
+from sqlalchemy import String
 from sqlalchemy.orm import (
     DeclarativeBase,
     Mapped,
@@ -13,4 +14,4 @@ class Book(Base):
     __tablename__ = "book"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    title: Mapped[str]
+    title: Mapped[str] = mapped_column(String(100), nullable=False)
