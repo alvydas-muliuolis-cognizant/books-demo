@@ -1,12 +1,7 @@
 from pydantic import BaseModel, Field
 
-
-class AuthorResponse(BaseModel):
-    full_name: str
-
-
-class PublisherResponse(BaseModel):
-    name: str
+from src.author.schemas import AuthorResponse
+from src.publisher.schemas import PublisherResponse
 
 
 class BookResponse(BaseModel):
