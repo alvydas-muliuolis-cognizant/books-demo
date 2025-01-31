@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 
-from database import DbSession
+from src.database import DbSession
 
-from .schemas import BookCreate, BookResponse
+from .schemas import BookCreateRequest, BookResponse
 from .service import (
     create,
     get_all,
@@ -16,7 +16,6 @@ async def get_books(db_session: DbSession):
     return await get_all(db_session)
 
 
-# TODO: fix this endpoint
-@router.post("")
-async def create_book(db_session: DbSession, book_in: BookCreate):
-    return create(db_session, book_in)
+@router.post("", response_model=BookResponse)
+async def create_book(db_session: DbSession, book_in: BookCreateRequest):
+    return await create(db_session, book_in)
