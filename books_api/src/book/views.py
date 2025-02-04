@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-
 from src.database import DbSession
 
 from .schemas import BookCreateRequest, BookResponse

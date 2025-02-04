@@ -1,5 +1,4 @@
 from pydantic import BaseModel, Field
-
 from src.author.schemas import AuthorResponse
 from src.publisher.schemas import PublisherResponse
 
